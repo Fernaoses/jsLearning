@@ -52,30 +52,29 @@ class Persona{
             console.log('Soy una funcion dentro de quienNoSoy');
         }
     }
+}
 
-} 
+class Ciudad extends Persona {
 
-// Inicializando objetos de la clase Persona
-const pedro = new Persona("Pedro", 30, "masculino");
-const juan = new Persona("Juan", 25, "masculino");
+    ciudad = '';
 
-// console.log(pedro);
-// console.log(juan);
+    constructor(nombre, edad, sexo){
+        // Llamada al constructor de la clase padre (Persona)
+        super(nombre, edad, sexo);
+        // Inicializando el atributo ciudad
+        this.ciudad = 'Panama';
+    }
 
-// pedro.quienSoy();
-// pedro.quienNoSoy();
+    quienSoy() {
+        // Llamada al metodo quienSoy() de la clase padre (Persona)
+        console.log(`Vivo en la ciudad de ${this.ciudad}.`);
+        super.quienSoy();
+    }
+}
 
-// [pedro, juan].forEach(persona => persona.quienSoy());
+const pedro = new Persona;
+const pedroS = new Ciudad(nombre="Pedro", edad=30, sexo="masculino");
 
-// pedro.setComidaFavorita = "Pizza";
-// console.log(`La comida favorita de ${pedro.nombre} es ${pedro.comida}.`);
-// pedro.setComidaFavorita = "Tacos";
-// console.log(`La comida favorita de ${pedro.nombre} es ${pedro.comida}.`);
-
-// console.log(juan);
-// juan.getComidaFavorita;
-
-console.log(`El contador de personas creadas es: ${Persona._contador}`);
-console.log(Persona.contador); // Llamada al getter estatico contador
-
-const mensaje = Persona.mensaje(); // Llamada al metodo estatico mensaje
+console.log(pedro);
+console.log(pedroS);
+pedroS.quienSoy();
